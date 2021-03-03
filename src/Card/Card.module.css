@@ -1,0 +1,86 @@
+.Card {
+  padding: 10px 15px;
+  background-color: #040509;
+  color: white;
+  border-radius: 5px;
+  margin-bottom: 10px;
+  margin-right: 5px;
+  border: 1px solid #383738;
+}
+
+.Text {
+  margin-bottom: 10px;
+  display: flex;
+  width: 100%;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+
+.Text p {
+  overflow-wrap: anywhere;
+}
+
+.Text img {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.Controls {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px;
+}
+
+.Rating {
+  display: flex;
+  align-items: flex-end;
+  gap: 10px;
+}
+
+.Rating span {
+  min-width: 30px;
+  text-align: center;
+}
+
+.Rating img {
+  cursor: pointer;
+  width: 20px;
+  height: 20px;
+}
+
+.UpdForm {
+  width: 100%;
+  margin-bottom: 10px;
+}
+
+.UpdForm button {
+  cursor: pointer;
+  display: block;
+  background: #1f59fc;
+  color: white;
+  padding: 10px 15px;
+  margin-left: auto;
+}
+
+.UpdForm button,
+textarea {
+  border: none;
+  border-radius: 5px;
+}
+
+.UpdForm textarea {
+  background-color: #383738;
+  color: white;
+  outline: none;
+  padding: 10px;
+  width: 100%;
+  height: 100px;
+  resize: none;
+  font-family: sans-serif;
+  margin-bottom: 5px;
+}
+
+.UpdForm textarea:focus {
+  border: 2px solid #0f92fd;
+}
