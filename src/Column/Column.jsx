@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import AddForm from '../AddForm/AddForm';
 import Card from '../Card/Card';
+import classNames from 'classnames';
 
 import styles from './Column.module.css';
 
@@ -54,7 +55,15 @@ export default class Column extends Component {
 
     return (
       <div className={styles.Column}>
-        <h3 className={styles.Header}>{title}</h3>
+        <h3
+          className={classNames(styles.Header, {
+            [styles.Good]: this.state.id === 1,
+            [styles.Bad]: this.state.id === 2,
+            [styles.Action]: this.state.id === 3,
+          })}
+        >
+          {title}
+        </h3>
         <AddForm addCard={addCard} />
         <div className={styles.CardsContainer}>
           {sortedCards &&

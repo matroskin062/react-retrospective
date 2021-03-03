@@ -30,16 +30,28 @@ textarea {
   resize: none;
   font-family: sans-serif;
   margin-bottom: 5px;
+  font-size: 16px;
 }
 
 .AddForm textarea:focus {
   border: 2px solid #0f92fd;
 }
 
+.FormControls {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.FormControls img {
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+}
+
 .SubmitButton {
-  display: block;
   background: #1f59fc;
   color: white;
   padding: 10px 15px;
-  margin-left: auto;
+  margin-left: 10px;
 }

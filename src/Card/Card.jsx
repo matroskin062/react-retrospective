@@ -5,7 +5,7 @@ import styles from './Card.module.css';
 import dislike from '../assets/dislike.svg';
 import like from '../assets/like.svg';
 import edit from '../assets/edit.svg';
-
+import cross from '../assets/cross.svg';
 class Card extends React.Component {
   constructor(props) {
     super(props);
@@ -37,6 +37,7 @@ class Card extends React.Component {
     this.setState({ isEditing: !this.state.isEditing }, () => {
       if (this.state.isEditing) {
         this.inputRef.current.focus();
+        this.inputRef.current.value = this.props.text;
       }
     });
   }
@@ -48,8 +49,11 @@ class Card extends React.Component {
 
     const form = (
       <div className={styles.UpdForm}>
-        <textarea ref={inputRef}></textarea>
-        <button onClick={handleUpdate}>Update Note</button>
+        <textarea ref={inputRef} placeholder='Input note text'></textarea>
+        <div className={styles.FormControls}>
+          <img src={cross} alt='cancel' onClick={toggleForm} />
+          <button onClick={handleUpdate}>Update Note</button>
+        </div>
       </div>
     );
 

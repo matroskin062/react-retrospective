@@ -2,6 +2,8 @@ import React from 'react';
 
 import styles from './AddForm.module.css';
 
+import cross from '../assets/cross.svg';
+
 class AddForm extends React.Component {
   constructor(props) {
     super(props);
@@ -47,9 +49,12 @@ class AddForm extends React.Component {
           ref={inputRef}
           placeholder='Input note text'
         ></textarea>
-        <button className={styles.SubmitButton} onClick={handleClick}>
-          Add Note
-        </button>
+        <div className={styles.FormControls}>
+          <img src={cross} alt='cancel' onClick={toggleForm} />
+          <button className={styles.SubmitButton} onClick={handleClick}>
+            Add Note
+          </button>
+        </div>
       </>
     );
 

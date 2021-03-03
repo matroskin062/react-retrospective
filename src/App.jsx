@@ -15,7 +15,7 @@ const columns = [
 
 function App() {
   return (
-    <div className='App'>
+    <div className='Board'>
       {columns.map((column) => (
         <Column key={column.id} {...column} />
       ))}
