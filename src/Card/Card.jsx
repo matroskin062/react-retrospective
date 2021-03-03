@@ -29,8 +29,10 @@ class Card extends React.Component {
   }
 
   handleUpdate() {
-    this.props.updateCard(this.inputRef.current.value, this.props.id);
-    this.toggleForm();
+    if (this.inputRef.current.value.trim()) {
+      this.props.updateCard(this.inputRef.current.value, this.props.id);
+      this.toggleForm();
+    }
   }
 
   toggleForm() {
