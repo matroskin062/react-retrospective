@@ -2,10 +2,12 @@ import React from 'react';
 
 import styles from './Card.module.css';
 
-import dislike from '../assets/dislike.svg';
-import like from '../assets/like.svg';
-import edit from '../assets/edit.svg';
-import cross from '../assets/cross.svg';
+import dislike from '../../assets/dislike.svg';
+import like from '../../assets/like.svg';
+import edit from '../../assets/edit.svg';
+import cross from '../../assets/cross.svg';
+import deleteIco from '../../assets/delete.svg';
+
 class Card extends React.Component {
   constructor(props) {
     super(props);
@@ -17,6 +19,7 @@ class Card extends React.Component {
     this.incRating = this.incRating.bind(this);
     this.decRating = this.decRating.bind(this);
     this.handleUpdate = this.handleUpdate.bind(this);
+    this.handleDelete = this.handleDelete.bind(this);
 
     this.inputRef = React.createRef();
   }
@@ -44,9 +47,20 @@ class Card extends React.Component {
     });
   }
 
+  handleDelete() {
+    this.props.deleteCard(this.props.id);
+  }
+
   render() {
-    const { inputRef, handleUpdate, toggleForm, incRating, decRating } = this;
-    const { text, created_at, rating } = this.props;
+    const {
+      inputRef,
+      handleUpdate,
+      toggleForm,
+      incRating,
+      decRating,
+      handleDelete,
+    } = this;
+    const { text, created_at, rating, color } = this.props;
     const { isEditing } = this.state;
 
     const form = (
@@ -60,18 +74,25 @@ class Card extends React.Component {
     );
 
     return (
-      <div className={styles.Card}>
+      <div className={styles.Card} style={{ border: `1px solid ${color}` }}>
         <div className={styles.Text}>
           {isEditing ? (
             form
           ) : (
             <>
               <p>{text}</p>
-              <img src={edit} alt='edit' onClick={toggleForm} />
+              <div className={styles.Controls}>
+                <div>
+                  <img src={edit} alt='edit' onClick={toggleForm} />
+                </div>
+                <div>
+                  <img src={deleteIco} alt='delete' onClick={handleDelete} />
+                </div>
+              </div>
             </>
           )}
         </div>
-        <div className={styles.Controls}>
+        <div className={styles.CardFooter}>
           <p>{created_at}</p>
           <div className={styles.Rating}>
             <img src={dislike} alt='dislike' onClick={decRating} />

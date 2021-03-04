@@ -2,7 +2,7 @@ import React from 'react';
 
 import styles from './AddForm.module.css';
 
-import cross from '../assets/cross.svg';
+import cross from '../../assets/cross.svg';
 
 class AddForm extends React.Component {
   constructor(props) {

@@ -26,7 +26,7 @@
   height: 20px;
 }
 
-.Controls {
+.CardFooter {
   display: flex;
   justify-content: space-between;
   padding: 5px;
@@ -95,4 +95,12 @@ textarea {
   cursor: pointer;
   width: 15px;
   height: 15px;
+}
+
+.Controls {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 10px;
+  padding-left: 10px;
 }

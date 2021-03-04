@@ -1,0 +1,12 @@
+.Board {
+  display: flex;
+  height: 100vh;
+  padding: 10px 20px;
+  gap: 40px;
+}
+
+@media (max-width: 768px) {
+  .Board {
+    flex-direction: column;
+  }
+}
