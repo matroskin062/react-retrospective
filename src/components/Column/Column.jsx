@@ -15,12 +15,6 @@ export default class Column extends Component {
     this.deleteCard = this.deleteCard.bind(this);
   }
 
-  componentDidMount() {
-    this.setState((state) => ({
-      ...state,
-    }));
-  }
-
   addCard(text) {
     const newCard = {
       id: performance.now(),
